@@ -13,6 +13,9 @@ import {
 import {
     clearElementChildren
 } from "../domHelper.js"
+import{
+    createSongCommentForm
+} from "./songCommentForm.js"
 
 
 const createSongSection = (element, songs) => {
@@ -24,7 +27,9 @@ const createSongSection = (element, songs) => {
     ul.innerHTML = `
         <p>${songs.title}</p>
         <a href="${songs.link}">Click here for Youtube Link</a>
-        <p>${songs.duration}</p>  
+        <p>${songs.duration}</p>
+        <p>${songs.comments}</p>  
     `
     element.append(ul);
+    createSongCommentForm(element, songs.id)
 }

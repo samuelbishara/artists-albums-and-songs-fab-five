@@ -25,6 +25,9 @@ import {
 import { 
     createSongForm 
 } from "./songForm.js"
+import{
+    createAlbumCommentForm
+} from "./albumCommentForm.js"
 
 
 const createAlbumSection = (element, album) => {
@@ -36,7 +39,8 @@ const createAlbumSection = (element, album) => {
     ul.innerHTML = `
         <img src="${album.image}" alt="">
         <p>${album.title}</p>
-        <p>${album.recordLabel}</p>       
+        <p>${album.recordLabel}</p>
+        <p>${album.comments}</p>       
     `
     element.append(ul);
     
@@ -53,5 +57,6 @@ const createAlbumSection = (element, album) => {
     }
 
     createSongForm(element);
+    createAlbumCommentForm(element, album.id)
  
 }

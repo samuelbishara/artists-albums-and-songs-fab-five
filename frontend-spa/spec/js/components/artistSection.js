@@ -24,7 +24,10 @@ import {
 } from "./albumSection.js"
 import{
     createAlbumForm
-} from"./albumForm.js"
+} from "./albumForm.js"
+import{
+    createArtistCommentRatingForm
+} from "./commentRatingForm.js"
 
 const createArtistSection = (element, artist) => {
     clearElementChildren(element);
@@ -38,6 +41,7 @@ const createArtistSection = (element, artist) => {
         <h4>${artist.genre}</h4>
         <h4>${artist.recordLabel}</h4>
         <p>${artist.description}</p>
+        <p>${artist.comments}</p>
     `
     element.append(ul);
 
@@ -52,7 +56,8 @@ const createArtistSection = (element, artist) => {
         })
         ul.append(li);
     }
-    createAlbumForm(element);    
+    createAlbumForm(element); 
+    createArtistCommentRatingForm(element, artist.id)   
 }
 
     

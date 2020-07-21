@@ -2,7 +2,10 @@ export {
     fetchSingleArtist, 
     addNewArtist,
     addNewAlbum,
-    addNewSong
+    addNewSong, 
+    addNewCommentToArtist, 
+    addNewCommentToAlbum,
+    addNewCommentToSong
 }
 
 const fetchSingleArtist = async () => {
@@ -37,5 +40,26 @@ const addNewSong = async (song) => {
             "Content-Type": "application/json"
         }, 
         body: JSON.stringify(song)
+    }).then(response => response.json())
+}
+
+const addNewCommentToArtist = async (comment, artistId) => {
+    return fetch(`http://localhost:8080/api/artists/${artistId}/comment`, {
+        method: "PATCH", 
+        body: comment 
+    }).then(response => response.json())
+}
+
+const addNewCommentToAlbum = async (comment, albumId) => {
+    return fetch(`http://localhost:8080/api/albums/${albumId}/comment`, {
+        method: "PATCH", 
+        body: comment 
+    }).then(response => response.json())
+}
+
+const addNewCommentToSong = async (comment, songId) => {
+    return fetch(`http://localhost:8080/api/songs/${songId}/comment`, {
+        method: "PATCH", 
+        body: comment
     }).then(response => response.json())
 }

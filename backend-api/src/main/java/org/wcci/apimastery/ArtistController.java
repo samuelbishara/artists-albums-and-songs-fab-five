@@ -37,6 +37,14 @@ public class ArtistController {
         return albumToAdd.getArtist();
     }
 
+    @PatchMapping("/api/artists/{artistId}/comment")
+    public Artist addCommentToArtist(@PathVariable Long artistId, @RequestBody String comment){
+        Artist artist = artistStorage.findArtistById((artistId));
+        artist.addComment(comment);
+        artistStorage.save(artist);
+        return artist;
+    }
+
     @DeleteMapping("/api/artists/{id}")
     public Collection<Artist> deleteArtist(@PathVariable Long id) {
         artistStorage.delete(id);

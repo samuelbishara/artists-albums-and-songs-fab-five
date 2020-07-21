@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -22,8 +23,8 @@ public class Album {
     @OneToMany(orphanRemoval = true)
     private Collection<Song> songs;
     private int rating;
-    @OneToMany
-    private Collection<Comment> comments;
+    @ElementCollection
+    private List<String> comments;
 
     protected Album(){}
 
@@ -48,7 +49,7 @@ public class Album {
         return rating;
     }
 
-    public Collection<Comment> getComments() {
+    public List<String> getComments() {
         return comments;
     }
 
@@ -66,5 +67,12 @@ public class Album {
 
     public Collection<Song> getSongs() {
         return songs;
+    }
+
+    public void addComment(String comment){
+        if(comments==null){
+            comments=new ArrayList<>();
+        }
+        comments.add(comment);
     }
 }

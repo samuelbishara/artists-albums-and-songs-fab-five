@@ -16,6 +16,14 @@ Content-Type: application/json
   "recordLabel": "Test Record Label"
 }
 ###
+PATCH http://localhost:8080/api/artists/1/comment
+Content-Type: application/json
+
+{
+"title": "Test Album",
+"recordLabel": "Test Record Label"
+}
+###
 POST http://localhost:8080/api/artists/
 Content-Type: application/json
 

@@ -29,6 +29,14 @@ SongStorage songStorage;
         return songStorage.save(songName);
     }
 
+    @PatchMapping("/api/songs/{songId}/comment")
+    public Song addCommentToSong(@PathVariable Long songId, @RequestBody String comment){
+        Song song = songStorage.findSongById((songId));
+        song.addComment(comment);
+        songStorage.save(song);
+        return song;
+    }
+
     @DeleteMapping("/api/songs/{songId}")
     public Collection<Song> deleteSongs(@PathVariable Long songId) {
         Song songToRemove = songStorage.findSongById(songId);

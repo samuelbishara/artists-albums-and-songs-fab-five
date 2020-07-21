@@ -2,11 +2,10 @@ package org.wcci.apimastery;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Artist {
@@ -21,9 +20,10 @@ public class Artist {
     private String description;
     private String genre;
     private String recordLabel;
-    private int rating;
-    @OneToMany
-    private Collection<Comment> comments;
+    @ElementCollection
+    private List<String> ratings;
+    @ElementCollection
+    private List<String> comments;
 
     protected Artist() {}
 
@@ -35,6 +35,7 @@ public class Artist {
         this.genre = genre;
         this.recordLabel = recordLabel;
         this.comments = comments;
+        this.ratings = ratings;
     }
 
     public Long getId() {
@@ -65,11 +66,25 @@ public class Artist {
         return recordLabel;
     }
 
-    public int getRating() {
-        return rating;
+    public List<String> getRatings() {
+        return ratings;
     }
 
-    public Collection<Comment> getComments() {
+    public List<String> getComments() {
         return comments;
+    }
+
+    public void addComment(String comment){
+        if(comments==null){
+            comments=new ArrayList<>();
+        }
+        comments.add(comment);
+    }
+
+    public void addRating(String rating){
+        if(ratings==null){
+            ratings=new ArrayList<>();
+        }
+        ratings.add(rating);
     }
 }

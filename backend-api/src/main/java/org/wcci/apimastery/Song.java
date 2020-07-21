@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 
 @Entity
@@ -20,20 +21,20 @@ public class Song {
     @ManyToOne
     private Artist artist;
     private int rating;
-    @OneToMany
-    private Collection<Comment> comments;
+    @ElementCollection
+    private List<String> comments;
 
     protected Song() {
     }
 
-    public Song(String title, String link, String duration, Album album, Artist artist, int rating, Comment... comments) {
+    public Song(String title, String link, String duration, Album album, Artist artist, int rating) {
         this.title = title;
         this.link = link;
         this.duration = duration;
         this.album = album;
         this.artist = artist;
         this.rating = rating;
-        this.comments = new ArrayList<>(Arrays.asList(comments));
+        this.comments = comments;
     }
 
     public Song(String title, String link, String duration) {
@@ -70,8 +71,15 @@ public class Song {
         return rating;
     }
 
-    public Collection<Comment> getComments() {
+    public List<String> getComments() {
         return comments;
+    }
+
+    public void addComment(String comment){
+        if(comments==null){
+            comments=new ArrayList<>();
+        }
+        comments.add(comment);
     }
 
 

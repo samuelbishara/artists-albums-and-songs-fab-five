@@ -27,7 +27,7 @@ public class Song {
     protected Song() {
     }
 
-    public Song(String title, String link, String duration, Album album, Artist artist, int rating) {
+    public Song(String title, String link, String duration, Album album, Artist artist) {
         this.title = title;
         this.link = link;
         this.duration = duration;

@@ -120,7 +120,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(lostInParadise);
 
         Song pusherLoveGirl = new Song("Pusher Love Girl", "https://www.youtube.com/watch?v=P8mNfNQOm0A", "8:02");
-        Song suiteAndTie = new Song("Suite And Tie", "https://www.youtube.com/watch?v=IsUsVbTj2AY", "5:26");
+        Song suitAndTie = new Song("Suit And Tie", "https://www.youtube.com/watch?v=IsUsVbTj2AY", "5:26");
         Song dontHoldTheWall = new Song("Don't Hold The Wall", "https://www.youtube.com/watch?v=MWd4BJRExNw", "7:10");
         Song strawberryBubblegum = new Song("Strawberry Bubblegum", "https://www.youtube.com/watch?v=OsbnozwyWXo", "7:59");
         Song tunnelVision = new Song("Tunnel Vision", "https://www.youtube.com/watch?v=07FYdnEawAQ", "6:46");
@@ -131,7 +131,7 @@ public class Populator implements CommandLineRunner {
         Song blueOceanFloor = new Song("Blue Ocean Floor", "https://www.youtube.com/watch?v=K5oAf7bs7_U", "7:19");
 
         songRepo.save(pusherLoveGirl);
-        songRepo.save(suiteAndTie);
+        songRepo.save(suitAndTie);
         songRepo.save(dontHoldTheWall);
         songRepo.save(strawberryBubblegum);
         songRepo.save(tunnelVision);
@@ -144,12 +144,12 @@ public class Populator implements CommandLineRunner {
         Album theFame = new Album("The Fame", "Streamline", "https://static.keymusic.com/products/119000/340/hal-leonard-lady-gaga-the-fame-monster.jpg", ladyGaga, justDance, pokerFace, ehEh, loveGame, paparazzi);
         Album thursday = new Album("Thursday", "XO", "https://upload.wikimedia.org/wikipedia/en/d/dd/The_Weeknd_-_Thursday.png", theWeeknd, lonelyStar, lifeOfTheParty, thursday1,
                 theZone, theBirdsPart1, theBirdsPart2, gone, rollingStone, heavenOrLA);
-        Album lemonade = new Album("Lemonade", "Parkwood Entertainment", "https://en.wikipedia.org/wiki/Parkwood_Entertainment#/media/File:PWE.svg", beyonce,
+        Album lemonade = new Album("Lemonade", "Parkwood Entertainment", "https://upload.wikimedia.org/wikipedia/en/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png", beyonce,
                 pray, holdUp, sorry, sixInch, daddyLessons, loveDrought, sandCastles, forward, freedom, allNight, formation);
         Album unapologetic = new Album("Unapologetic","Roc Nation","https://23u0pr24qn4zn4d4qinlmyh8-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/rhi_12_original_19979.jpg",
                 rihanna,phreshOutTheRunway,diamonds,numb,pourItUp,loveSong,jump,rightNow,whatNow,stay,nobodysBusiness,loveWithoutTragedy,getItOverWith,noLoveAllowed,lostInParadise);
         Album twentyTwenty = new Album("The 20/20 Experience","Tennman Records","https://static.billboard.com/files/media/justin-timberlake-20-20-experience-650-430-compressed.jpg",
-                justinTimberlake,pusherLoveGirl,suiteAndTie,dontHoldTheWall,strawberryBubblegum,tunnelVision,spaceshipCoupe,thatGirl,letTheGrooveGetIn,mirrors,blueOceanFloor);
+                justinTimberlake,pusherLoveGirl,suitAndTie,dontHoldTheWall,strawberryBubblegum,tunnelVision,spaceshipCoupe,thatGirl,letTheGrooveGetIn,mirrors,blueOceanFloor);
 
         albumRepo.save(theFame);
         albumRepo.save(thursday);

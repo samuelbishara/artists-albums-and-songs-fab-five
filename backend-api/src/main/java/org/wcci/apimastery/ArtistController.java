@@ -45,9 +45,9 @@ public class ArtistController {
         return artist;
     }
 
-    @DeleteMapping("/api/artists/{id}")
-    public Collection<Artist> deleteArtist(@PathVariable Long id) {
-        artistStorage.delete(id);
+    @DeleteMapping("/api/artists/{artistId}")
+    public Collection<Artist> deleteArtist(@PathVariable Long artistId) {
+        artistStorage.delete(artistId);
         return artistStorage.findAllArtists();
     }
 

@@ -37,7 +37,7 @@ public class AlbumController {
     public Album addSongToAlbum(@PathVariable Long albumId, @RequestBody Song song){
         Album album = albumStorage.findAlbumById(albumId);
 //        Artist artist = artistStorage.findArtistById(artistId);
-        Song songToAdd = new Song(song.getTitle(), song.getLink(),song.getDuration(),album,album.getArtist(),song.getRating());
+        Song songToAdd = new Song(song.getTitle(), song.getLink(),song.getDuration(),album,album.getArtist());
         songStorage.save(songToAdd);
         return songToAdd.getAlbum();
     }

@@ -13,10 +13,12 @@ import{
 function createAlbumCommentForm(element, albumId){
  
 const commentInput = document.createElement('input');
+const myBr = document.createElement('br');
     commentInput.type='text';
     commentInput.placeholder = 'Enter comment';
     commentInput.classList.add('artist-label');
     element.append(commentInput);
+    element.append(myBr);
     const submitButton = document.createElement('button');
     submitButton.innerText = "Submit New Feedback";
     submitButton.classList.add('artist-submit');

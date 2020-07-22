@@ -42,19 +42,12 @@ const createMainSection = (element, artists) => {
         li.classList.add('grid-item');
         li.innerHTML = `
                 <img class="artist-img" src="${artists[i].image}">
-                <a>${artists[i].name}</a>
-                <button type="submit" class="delete">x</button>
+                <a href="${artists[i].name}">${artists[i].name}</a>
         `
        li.addEventListener('click', (event) => {
             event.preventDefault();
             createArtistSection(element, artists[i]);
         });
-
-        li.querySelector(".delete").addEventListener('click', (event) => {
-            event.preventDefault();
-            deleteArtist(artists[i].id);
-            createMainSection(element, artists);
-        })
 
         ul.append(li)
     }

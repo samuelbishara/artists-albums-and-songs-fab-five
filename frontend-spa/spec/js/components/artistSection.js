@@ -47,7 +47,7 @@ const createArtistSection = (element, artist) => {
     for (let i = 0; i < artist.albums.length; i++){
         const li = document.createElement('li');
         li.innerHTML = `
-            <a>${artist.albums[i].title}</a>
+            <a href="${artist.albums[i].title}">${artist.albums[i].title}</a>
         `
         li.addEventListener('click', () => {
             event.preventDefault();

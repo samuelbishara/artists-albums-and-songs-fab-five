@@ -55,9 +55,11 @@ const createArtistSection = (element, artist) => {
         })
         ul.append(li);
     }
+    
     createAlbumForm(element); 
     createArtistCommentRatingForm(element, artist.id); 
-    element.append(createFooter());  
+    element.append(createFooter());
+      
 }
 
     

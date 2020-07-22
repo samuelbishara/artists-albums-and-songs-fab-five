@@ -22,7 +22,6 @@ const createSongSection = (element, songs) => {
     clearElementChildren(element);
     element.append(createHeader());
     element.append(createNavBar());
-    element.append(createFooter());
     const ul = document.createElement('ul');
     ul.innerHTML = `
         <p>${songs.title}</p>
@@ -31,5 +30,6 @@ const createSongSection = (element, songs) => {
         <p>${songs.comments}</p>  
     `
     element.append(ul);
-    createSongCommentForm(element, songs.id)
+    createSongCommentForm(element, songs.id);
+    element.append(createFooter());
 }

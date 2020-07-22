@@ -33,10 +33,9 @@ const createArtistSection = (element, artist) => {
     clearElementChildren(element);
     element.append(createHeader());
     element.append(createNavBar());
-    element.append(createFooter());
     const ul = document.createElement('ul');
     ul.innerHTML = `
-        <img src="${artist.image}" alt="">
+        <img src="${artist.image}" width="550" height="450" alt="">
         <h2>${artist.name}</h2>
         <h4>${artist.genre}</h4>
         <h4>${artist.recordLabel}</h4>
@@ -57,7 +56,8 @@ const createArtistSection = (element, artist) => {
         ul.append(li);
     }
     createAlbumForm(element); 
-    createArtistCommentRatingForm(element, artist.id)   
+    createArtistCommentRatingForm(element, artist.id); 
+    element.append(createFooter());  
 }
 
     

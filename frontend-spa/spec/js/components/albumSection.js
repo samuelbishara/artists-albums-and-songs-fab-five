@@ -34,10 +34,9 @@ const createAlbumSection = (element, album) => {
     clearElementChildren(element);
     element.append(createHeader());
     element.append(createNavBar());
-    element.append(createFooter());
     const ul = document.createElement('ul');
     ul.innerHTML = `
-        <img src="${album.image}" alt="">
+        <img src="${album.image}" width="500" height="450" alt="">
         <p>${album.title}</p>
         <p>${album.recordLabel}</p>
         <p>${album.comments}</p>       
@@ -57,6 +56,7 @@ const createAlbumSection = (element, album) => {
     }
 
     createSongForm(element);
-    createAlbumCommentForm(element, album.id)
+    createAlbumCommentForm(element, album.id);
+    element.append(createFooter());
  
 }
